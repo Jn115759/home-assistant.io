@@ -57,7 +57,7 @@ Here is how an [action](/docs/automation/action) of your [automation setup](/get
 
 ```yaml
 actions:
-  - action: persistent_notification.create
+  - action: notify.persistent_notification
     data:
       message: "Your message goes here"
       title: "Custom subject"
@@ -69,7 +69,7 @@ If you want to show some runtime information, you have to use [templates](/docs/
 
 ```yaml
 actions:
-  - action: persistent_notification.create
+  - action: notify.persistent_notification
     data:
       title: >
         Thermostat is {{ state_attr('climate.thermostat', 'hvac_action') }}
@@ -120,7 +120,7 @@ The message attribute supports the [Markdown formatting syntax](https://daringfi
 
 ### Create a persistent notification
 
-Choose the **{% my developer_services title="Actions" %}** tab from the **Developer Tools** sidebar item, then select the {% my developer_services service="persistent_notification.create" title="`persistent_notification.create`" %} action from the **Action** dropdown. Enter something like the sample below into the **data** field and press the **Perform action** button.
+Choose the **{% my developer_services title="Actions" %}** tab from the **Developer Tools** sidebar item, then select the {% my developer_services service="Notifications: Send a persistent notification" title="`notify.persistent_notification`" %} action from the **Action** dropdown. Enter something like the sample below into the **data** field and press the **Perform action** button.
 
 ```json
 {
@@ -129,7 +129,7 @@ Choose the **{% my developer_services title="Actions" %}** tab from the **Develo
   "message": "This is a sample text."
 }
 ```
-This will create the notification entry shown above.
+This will create and send the notification entry shown above.
 
 ### Use as a notifier
 
